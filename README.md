@@ -29,6 +29,25 @@ The code demonstrates in real-time:
    ```bash
    python reio_demo.py
    ```
+---
+
+## 🔌 Hardware Architecture: The REIO-SPU-101 Chip Specification
+
+To transition from abstract computing to physical immunization, a REIO processor abandons the classic Von Neumann architecture. It implements a **Semantic Processing Unit (SPU)** where paraconsistent logic is engraved at the silicon level.
+
+### 1. [REIO-HW-A2] Certified Input Pins (CIP)
+Every data input bus is physically coupled with an asymmetric cryptographic decoder wired into the silicon. If an input signal lands on a pin without a valid hardware authentication token from a certified physical sensor, the logic gate remains open to the electrical ground. The unauthorized data is physically annihilated and never reaches the CPU registers.
+
+### 2. [REIO-HW-A4] Paraconsistent Quarantine Register (PQR)
+The processor features two physically isolated register zones separated by potential barriers. 
+* **Active Execution Register (AER)**: Handles nominal, verified operations.
+* **Paraconsistent Quarantine Register (PQR)**: Stores out-of-bound anomalies. The hardware is structurally designed to hold conflicting states (such as `1 AND 0`) inside the PQR without triggering a hardware interrupt, a kernel panic, or an electrical short-circuit. The rest of the chip continues executing the AER seamlessly.
+
+### 3. [REIO-HW-A5] Recursive Axiom Switching Engine (Meta-R1)
+A hardware clock cycle counter is directly linked to the Quarantine Register (PQR). If an anomaly persists for more than $N$ consecutive clock cycles (excluding thermal noise below $\epsilon$), the Meta-R1 operator triggers a programming voltage on the internal non-volatile memory (EEPROM/Flash). The obsolete nominal axiom in the AER is instantly overwritten with the new physical constant measured in real-time.
+
+### 4. [REIO-HW-A6] ZK-ASIC Cryptographic Shield
+An Application-Specific Integrated Circuit (ASIC) dedicated to Zero-Knowledge Proofs is engraved alongside the logical core. Every time an axiom rewrite occurs via the Meta-R1 engine, the ZK-ASIC bakes a mathematical proof of legitimacy. The resulting cryptographic hash is burned into an array of One-Time Programmable (OTP) hardware fuses. Once blown, the logical history of the chip becomes physically unalterable.
 
 ---
 ---
@@ -61,4 +80,23 @@ Le code démontre en temps réel :
    ```bash
    python reio_demo.py
    ```
-   
+   ---
+
+## 🔌 Architecture Matérielle : Spécifications de la Puce REIO-SPU-101
+
+Pour passer de l'informatique abstraite à l'immunisation physique, un processeur REIO abandonne l'architecture classique de Von Neumann au profit d'une **Unité de Traitement Sémantique (SPU)** où la logique paracohérente est gravée dans le silicium.
+
+### 1. [REIO-HW-A2] Broches d'Entrée Certifiées (CIP)
+Chaque bus d'entrée est couplé au niveau du silicium avec un décodeur cryptographique asymétrique câblé. Si un signal se présente sur une broche sans jeton d'authentification matériel valide provenant d'un capteur certifié, la porte logique d'entrée reste ouverte à la masse électrique. La donnée non autorisée est détruite et n'atteint jamais les registres.
+
+### 2. [REIO-HW-A4] Registre de Quarantaine Paracohérent (PQR)
+Le processeur dispose de deux zones de registres physiquement étanches, séparées par des barrières de potentiel.
+* **Active Execution Register (AER)** : Gère le comportement nominal de l'automate.
+* **Paraconsistent Quarantine Register (PQR)** : Stocke les anomalies hors-seuils. L'existence d'une contradiction logique (ex: `1 AND 0`) dans le registre PQR ne provoque aucun court-circuit ni aucune interruption matérielle (`Hardware Panic`). Le reste de la puce s'exécute de manière transparente.
+
+### 3. [REIO-HW-A5] Moteur de Commutation d'Axiomes (Méta-R1)
+Un compteur de cycles d'horloge matériel est relié au registre de quarantaine (PQR). Si l'anomalie persiste pendant plus de $N$ cycles consécutifs (excluant le bruit thermique inférieur à $\epsilon$), le méta-opérateur matériel déclenche une tension de programmation sur la grille de mémoire morte (EEPROM/Flash). L'ancien axiome de l'AER est effacé et réécrit instantanément avec la nouvelle constante physique constatée.
+
+### 4. [REIO-HW-A6] Blindage Cryptographique ZK-ASIC
+Un circuit intégré dédié (ASIC) aux preuves à divulgation nulle de connaissance (Zero-Knowledge) est gravé à côté du cœur logique. À chaque modification d'axiome par le Méta-R1, le ZK-ASIC calcule la preuve mathématique du changement d'état. Le hash résultant est écrit dans un registre de fusibles physiques (`One-Time Programmable ROM`). Une fois le fusible grillé, le passé logique de la puce est physiquement inaltérable.
+
