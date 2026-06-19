@@ -65,6 +65,10 @@ To neutralize synchronous multi-node spoofing attacks executed via external cabl
 
 To counteract entropy-exhaustion or ghost-injection attacks without draining device battery reserves, the PSR-001 layer deploys **Passive Semantic Resonance**. Integrated directly at the boundary of the CIP-V6 pin, this unpowered physical stage filters incoming inputs based on frequency convergence. High-frequency chaotic transients and asynchronous noise pulses are inherently suppressed by the micro-inductive and capacitive inertia of the hardware fabric, causing them to collapse and dissipate as micro-heat. Only structural signals matching the nominal, stabilized timing of official sensors can traverse the passive substrate, eliminating active switching overhead during adversarial flooding.
 
+### 9. [REIO-STD-V6] AMBA APB Wrapper: Industrial Silicon Interconnect
+
+To achieve universal industry standardization, the REIO core is encapsulated within an **AMBA APB (Advanced Peripheral Bus)** hardware wrapper (`reio_apb_wrapper.vhd`). This standard interface translates raw paraconsistent signals into fully compliant ARM architectures. It manages active-low system resets (`PRESETn`) through deterministic internal inversion and enforces strict address-phase execution (`PSEL` and `PENABLE`). Housed at base address `0x00`, a dedicated status register routes the core nominal execution path, quarantine line status, and sensor fault alerts directly to the host processor data bus (`PRDATA`), delivering drop-in semantic immunity for standard IoT and automotive microcontrollers.
+
 ---
 ---
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
@@ -131,3 +135,7 @@ Afin de neutraliser les attaques par injection synchrone menées via des câbles
 ### 8. [REIO-HW-V6] PSR-001 : Filtre de Résonance Sémantique Passive
 
 Afin de contrer les attaques par épuisement d'entropie ou par injections fantômes sans vider les réserves de batterie de l'appareil, la couche PSR-001 déploie un mécanisme de **Résonance Sémantique Passive**. Intégré directement à la frontière de la broche CIP-V6, cet étage physique non alimenté filtre les signaux entrants en fonction de leur convergence fréquentielle. Les impulsions chaotiques à haute frequência et les bruits asynchrones sont intrinsèquement atténués par l'inertie micro-inductive et capacitive du circuit, s'annulant d'eux-mêmes sous forme de micro-chaleur. Seuls les signaux structurels correspondant à la dynamique temporelle stabilisée des capteurs officiels traversent le substrat passif, éliminant toute surconsommation d'énergie active lors d'un bombardement de données.
+
+### 9. [REIO-STD-V6] Enveloppe AMBA APB : Interconnexion Industrielle Silicium
+
+Pour atteindre une standardisation industrielle universelle, le cœur REIO est encapsulé dans une enveloppe matérielle **AMBA APB (Advanced Peripheral Bus)** (`reio_apb_wrapper.vhd`). Cette interface standard traduit les signaux paracohérents bruts pour les rendre compatibles avec les architectures ARM. Elle gère les réinitialisations système actives à l'état bas (`PRESETn`) via une inversion interne déterministe et impose une exécution stricte des phases d'adressage (`PSEL` et `PENABLE`). Situé à l'adresse de base `0x00`, un registre d'état dédié redirige le canal d'exécution nominal, l'état de la ligne de quarantaine et les alertes de défaillance des capteurs directement vers le bus de données du processeur hôte (`PRDATA`), offrant une immunité sémantique immédiate pour les microcontrôleurs standards de l'IoT et de l'automobile.
