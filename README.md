@@ -57,6 +57,10 @@ To eliminate single-point-of-failure risks from compromised or corrupted sensors
 
 The RPB-201 module scales the REIO protocol from a standalone chip to a distributed network topology through the **Paraconsistent Bus Router**. When multi-node systems communicate over a shared physical cable, the routing node cross-checks incoming frames against the collective logical convergence of the other active, verified circuits. If a rogue data injection or a semantic denial-of-service attack strikes a single channel, the arbiter triggers a discrete physical open-circuit on that specific trace. The malicious node is isolated, preventing network bus saturation, while the rest of the cluster maintains nominal data flow at full speed.
 
+### 7. [REIO-HW-V6] CIP-V6: Orthogonal Impedance Isolation Pin
+
+To neutralize synchronous multi-node spoofing attacks executed via external cabling, the CIP-V6 architecture shifts verification to the electrodynamic layer. The pin measures incoming rise times and impedance signatures. If the physical trait deviates from the factory-sealed silicon reference ($\text{Signature} = 0$), the hardware instantly connects the pin directly to the ground plane ($\text{Broche\_Masse} = 1$). The malicious external signal is physically shorted out to 0 Volts before reaching the majority-voting modules, isolating the attack at the hardware boundary.
+
 ---
 ---
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
@@ -115,3 +119,7 @@ Afin d'éliminer les risques de défaillance unique provenant de capteurs corrom
 ### 6. [REIO-HW-V5] RPB-201 : Arbitre de Bus Paracohérent
 
 Le module RPB-201 étend le protocole REIO d'une puce autonome à une topologie réseau distribuée via le **Routeur de Bus Paracohérent**. Lorsque des systèmes multi-nœuds communiquent sur un câble physique partagé, le nœud de routage vérifie la cohérence des trames entrantes par rapport à la convergence logique collective des autres circuits actifs et vérifiés. Si une injection de données malveillantes ou une attaque par déni de service sémantique frappe un canal unique, l'arbitre déclenche une ouverture de circuit physique discrète sur cette trace spécifique. Le nœud corrompu est isolé, empêchant la saturation du bus réseau, tandis que le reste de la grappe maintient un flux de données nominal à pleine vitesse.
+
+### 7. [REIO-HW-V6] CIP-V6 : Broche d'Isolation d'Impédance Orthogonale
+
+Afin de neutraliser les attaques par injection synchrone menées via des câbles externes, l'architecture CIP-V6 déplace la vérification sur la couche électrodynamique. La broche mesure les temps de montée et les signatures d'impédance. Si la caractéristique physique dévie du silicium scellé d'usine ($\text{Signature} = 0$), le matériel connecte instantanément la broche directement au plan de masse ($\text{Broche\_Masse} = 1$). Le signal externe malveillant est court-circuité à 0 Volt avant d'atteindre les modules de vote majoritaire, isolant l'attaque à la frontière matérielle.
