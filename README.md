@@ -61,6 +61,10 @@ The RPB-201 module scales the REIO protocol from a standalone chip to a distribu
 
 To neutralize synchronous multi-node spoofing attacks executed via external cabling, the CIP-V6 architecture shifts verification to the electrodynamic layer. The pin measures incoming rise times and impedance signatures. If the physical trait deviates from the factory-sealed silicon reference ($\text{Signature} = 0$), the hardware instantly connects the pin directly to the ground plane ($\text{Broche\_Masse} = 1$). The malicious external signal is physically shorted out to 0 Volts before reaching the majority-voting modules, isolating the attack at the hardware boundary.
 
+### 8. [REIO-HW-V6] PSR-001: Passive Semantic Resonance Filter
+
+To counteract entropy-exhaustion or ghost-injection attacks without draining device battery reserves, the PSR-001 layer deploys **Passive Semantic Resonance**. Integrated directly at the boundary of the CIP-V6 pin, this unpowered physical stage filters incoming inputs based on frequency convergence. High-frequency chaotic transients and asynchronous noise pulses are inherently suppressed by the micro-inductive and capacitive inertia of the hardware fabric, causing them to collapse and dissipate as micro-heat. Only structural signals matching the nominal, stabilized timing of official sensors can traverse the passive substrate, eliminating active switching overhead during adversarial flooding.
+
 ---
 ---
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
@@ -123,3 +127,7 @@ Le module RPB-201 étend le protocole REIO d'une puce autonome à une topologie 
 ### 7. [REIO-HW-V6] CIP-V6 : Broche d'Isolation d'Impédance Orthogonale
 
 Afin de neutraliser les attaques par injection synchrone menées via des câbles externes, l'architecture CIP-V6 déplace la vérification sur la couche électrodynamique. La broche mesure les temps de montée et les signatures d'impédance. Si la caractéristique physique dévie du silicium scellé d'usine ($\text{Signature} = 0$), le matériel connecte instantanément la broche directement au plan de masse ($\text{Broche\_Masse} = 1$). Le signal externe malveillant est court-circuité à 0 Volt avant d'atteindre les modules de vote majoritaire, isolant l'attaque à la frontière matérielle.
+
+### 8. [REIO-HW-V6] PSR-001: Passive Semantic Resonance Filter
+
+To counteract entropy-exhaustion or ghost-injection attacks without draining device battery reserves, the PSR-001 layer deploys **Passive Semantic Resonance**. Integrated directly at the boundary of the CIP-V6 pin, this unpowered physical stage filters incoming inputs based on frequency convergence. High-frequency chaotic transients and asynchronous noise pulses are inherently suppressed by the micro-inductive and capacitive inertia of the hardware fabric, causing them to collapse and dissipate as micro-heat. Only structural signals matching the nominal, stabilized timing of official sensors can traverse the passive substrate, eliminating active switching overhead during adversarial flooding.
