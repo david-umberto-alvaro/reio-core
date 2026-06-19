@@ -49,6 +49,14 @@ A hardware clock cycle counter is directly linked to the Quarantine Register (PQ
 ### 4. [REIO-HW-A6] ZK-ASIC Cryptographic Shield
 An Application-Specific Integrated Circuit (ASIC) dedicated to Zero-Knowledge Proofs is engraved alongside the logical core. Every time an axiom rewrite occurs via the Meta-R1 engine, the ZK-ASIC bakes a mathematical proof of legitimacy. The resulting cryptographic hash is burned into an array of One-Time Programmable (OTP) hardware fuses. Once blown, the logical history of the chip becomes physically unalterable.
 
+### 5. [REIO-HW-V4] SPU-102: Hardware Triangulation & Temporal Inertia
+
+To eliminate single-point-of-failure risks from compromised or corrupted sensors, the SPU-102 architecture introduces the **Material Triangulation Axiom (MTA)**. The chip inputs a triplet of orthogonal hardware sources ($T_1, T_2, T_3$). A majority-voting synthesis process isolates any deviating pin by grounding its trace, allowing the execution to proceed seamlessly on the remaining operational sensors. Additionally, a **Temporal Sliding Register (TSR)** defines the structural thickness of time ($\tau$). Micro-delays below $\tau$ are filtered as passive noise, while discrepancies exceeding $\tau$ activate the Paraconsistent Quarantine Register without inducing software latch-up.
+
+### 6. [REIO-HW-V5] RPB-201: Paraconsistent Bus Arbiter
+
+The RPB-201 module scales the REIO protocol from a standalone chip to a distributed network topology through the **Paraconsistent Bus Router**. When multi-node systems communicate over a shared physical cable, the routing node cross-checks incoming frames against the collective logical convergence of the other active, verified circuits. If a rogue data injection or a semantic denial-of-service attack strikes a single channel, the arbiter triggers a discrete physical open-circuit on that specific trace. The malicious node is isolated, preventing network bus saturation, while the rest of the cluster maintains nominal data flow at full speed.
+
 ---
 ---
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
@@ -100,3 +108,10 @@ Un compteur de cycles d'horloge matériel est relié au registre de quarantaine 
 ### 4. [REIO-HW-A6] Blindage Cryptographique ZK-ASIC
 Un circuit intégré dédié (ASIC) aux preuves à divulgation nulle de connaissance (Zero-Knowledge) est gravé à côté du cœur logique. À chaque modification d'axiome par le Méta-R1, le ZK-ASIC calcule la preuve mathématique du changement d'état. Le hash résultant est écrit dans un registre de fusibles physiques (`One-Time Programmable ROM`). Une fois le fusible grillé, le passé logique de la puce est physiquement inaltérable.
 
+### 5. [REIO-HW-V4] SPU-102 : Triangulation Matérielle & Inertie Temporelle
+
+Afin d'éliminer les risques de défaillance unique provenant de capteurs corrompus ou sabotés, l'architecture SPU-102 introduit l'**Axiome de Triangulation Matérielle (MTA)**. La puce traite un triplet de sources matérielles orthogonales ($T_1, T_2, T_3$). Un processus de vote majoritaire isole toute broche divergente en reliant sa trace à la masse électrique, permettant à l'exécution de continuer de manière transparente sur les capteurs sains restants. De plus, un **Registre de Glissement Temporel (TSR)** définit l'épaisseur structurelle du temps ($\tau$). Les micro-décalages inférieurs à $\tau$ sont filtrés comme du bruit passif, tandis que les écarts supérieurs à $\tau$ activent le registre de quarantaine sans provoquer de blocage logiciel.
+
+### 6. [REIO-HW-V5] RPB-201 : Arbitre de Bus Paracohérent
+
+Le module RPB-201 étend le protocole REIO d'une puce autonome à une topologie réseau distribuée via le **Routeur de Bus Paracohérent**. Lorsque des systèmes multi-nœuds communiquent sur un câble physique partagé, le nœud de routage vérifie la cohérence des trames entrantes par rapport à la convergence logique collective des autres circuits actifs et vérifiés. Si une injection de données malveillantes ou une attaque par déni de service sémantique frappe un canal unique, l'arbitre déclenche une ouverture de circuit physique discrète sur cette trace spécifique. Le nœud corrompu est isolé, empêchant la saturation du bus réseau, tandis que le reste de la grappe maintient un flux de données nominal à pleine vitesse.
