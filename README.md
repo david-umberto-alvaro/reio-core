@@ -23,16 +23,6 @@ The scientific priority and theoretical foundations of this international standa
 
 ---
 
-## 🚀 Specific Proof: Cyber-Physical Crash-Test Simulation
-
-This repository contains the `reio_demo.py` script, which simulates a cyber-physical data injection attack on a critical industrial infrastructure (reactor cooling system).
-
-The code demonstrates in real-time:
-1. How classical computing is deceived, leading to the physical destruction of the plant.
-2. How the **REIO V3** engine neutralizes the hack, isolates the anomaly, rewrites its internal state, and maintains system safety.
-
----
-
 ## 🛠️ How to run the demonstration?
 
 1. Open your terminal.
@@ -91,16 +81,6 @@ L'informatique moderne est confrontée à une crise structurelle majeure. Les ar
 
 L'antériorité et les fondements théoriques de ce standard scientifique international ont été officiellement publiés et horodatés sur Zenodo :
 👉 **[Consulter la publication officielle REIO-RFC-003 sur Zenodo](https://zenodo.org)**
-
----
-
-## 🚀 Preuve Spécifique : Simulation de Crash-Test Industriel
-
-Ce dépôt contient le script `reio_demo.py` qui simule une attaque cyber-physique par injection de fausses données sur une infrastructure critique (système de refroidissement d'un réacteur). 
-
-Le code démontre en temps réel :
-1. Comment l'informatique classique est trompée et conduit à la destruction physique de l'usine.
-2. Comment le moteur **REIO V3** neutralise le piratage, applique le confinement de l'anomalie, réécrit ses règles et maintient la sécurité du système.
 
 ---
 
