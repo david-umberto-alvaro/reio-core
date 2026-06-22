@@ -1,13 +1,12 @@
 ## ⚖️ DUAL-LICENSING NOTICE / DOUBLE LICENCE COMMERCIALE
 
-**FRANÇAIS :**
-Ce dépôt (`reio-core`) est publié sous la licence publique GNU GPLv3. Tout usage grand public, académique ou open-source est libre, à condition de republier les modifications sous la même licence. 
-**RESTRICTION INDUSTRIELLE :** L'intégration de ce code ou de ses principes logiques dans des systèmes propriétaires fermés, des applications de défense, de l'aérospatiale ou des infrastructures critiques est STRICTEMENT SOUMISE à l'obtention préalable d'une licence commerciale privée et payante auprès de l'auteur. Contactez l'auteur pour négocier un accord d'exploitation.
-
 **ENGLISH:**
 This repository (`reio-core`) is published under the GNU GPLv3 public license. Non-commercial, academic, and open-source usage is permitted under Copyleft obligations.
 **INDUSTRIAL RESTRICTION:** Any integration of this VHDL/Python fabric into closed proprietary software/hardware, aerospace, military defense systems, or critical state infrastructures is STRICTLY PROHIBITED without a prior private commercial license agreement from the original author. Contact the author for commercial licensing.
 
+**FRANÇAIS :**
+Ce dépôt (`reio-core`) est publié sous la licence publique GNU GPLv3. Tout usage grand public, académique ou open-source est libre, à condition de republier les modifications sous la même licence. 
+**RESTRICTION INDUSTRIELLE :** L'intégration de ce code ou de ses principes logiques dans des systèmes propriétaires fermés, des applications de défense, de l'aérospatiale ou des infrastructures critiques est STRICTEMENT SOUMISE à l'obtention préalable d'une licence commerciale privée et payante auprès de l'auteur. Contactez l'auteur pour négocier un accord d'exploitation.
 
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
 
@@ -61,8 +60,7 @@ To counteract entropy-exhaustion or ghost-injection attacks without draining dev
 
 To achieve universal industry standardization, the REIO core is encapsulated within an **AMBA APB (Advanced Peripheral Bus)** hardware wrapper (`reio_apb_wrapper.vhd`). This standard interface translates raw paraconsistent signals into fully compliant ARM architectures. It manages active-low system resets (`PRESETn`) through deterministic internal inversion and enforces strict address-phase execution (`PSEL` and `PENABLE`). Housed at base address `0x00`, a dedicated status register routes the core nominal execution path, quarantine line status, and sensor fault alerts directly to the host processor data bus (`PRDATA`), delivering drop-in semantic immunity for standard IoT and automotive microcontrollers.
 
----
----
+====================================================================
 # REIO-CORE (Version 3.0.0 / Standard RFC-003)
 
 ## 📌 À propos du projet
