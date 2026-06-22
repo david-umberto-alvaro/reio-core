@@ -23,15 +23,6 @@ The scientific priority and theoretical foundations of this international standa
 
 ---
 
-## 🛠️ How to run the demonstration?
-
-1. Open your terminal.
-2. Run the proof script with zero external dependencies (pure Python):
-   ```bash
-   python reio_demo.py
-   ```
----
-
 ## 🔌 Hardware Architecture: The REIO-SPU-101 Chip Specification
 
 To transition from abstract computing to physical immunization, a REIO processor abandons the classic Von Neumann architecture. It implements a **Semantic Processing Unit (SPU)** where paraconsistent logic is engraved at the silicon level.
@@ -83,15 +74,6 @@ L'antériorité et les fondements théoriques de ce standard scientifique intern
 👉 **[Consulter la publication officielle REIO-RFC-003 sur Zenodo](https://zenodo.org)**
 
 ---
-
-## 🛠️ Comment exécuter la démonstration ?
-
-1. Placez-vous dans votre terminal de commande.
-2. Lancez le script de preuve sans aucune dépendance externe (Python pur) :
-   ```bash
-   python reio_demo.py
-   ```
-   ---
 
 ## 🔌 Architecture Matérielle : Spécifications de la Puce REIO-SPU-101
 
