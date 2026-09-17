@@ -19,4 +19,5 @@ jobs:
         with:
           args: |
             --workspace \
-            --release
+            --release \
+            --enable-unstable
