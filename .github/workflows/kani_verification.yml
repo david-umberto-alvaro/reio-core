@@ -14,10 +14,16 @@ jobs:
       - name: "🔗 Extraction du Code Source REIO"
         uses: actions/checkout@v4
 
-      - name: "⚡ Initialisation de la Suite d'Intégrité Kani"
-        uses: model-checking/kani-github-action@v1
+      - name: "🦀 Configuration de la Toolchain Rust Nightly"
+        uses: dtolnay/rust-toolchain@nightly
         with:
-          args: |
-            --workspace \
-            --release \
-            --enable-unstable
+          targets: riscv32imac-unknown-none-elf
+
+      - name: "📦 Installation Manuelle Directe de Kani Verifier"
+        run: |
+          cargo install --locked kani-verifier
+          cargo kani setup
+
+      - name: "⚡ Exécution du Solveur Mathématique sur le Workspace"
+        run: |
+          cargo kani --workspace --release
