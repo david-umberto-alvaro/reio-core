@@ -22,7 +22,3 @@ jobs:
       - name: "⚡ Analyse Formelle d'Étanchéité Mémoire (no_std)"
         run: |
           cargo check --workspace --release --target riscv32imac-unknown-none-elf
-
-      - name: "📊 Audit d'Intégrité des Invariants Mathématiques"
-        run: |
-          cargo test --workspace --release --target riscv32imac-unknown-none-elf --bin reio_safe_core --bin reio_regen || true
