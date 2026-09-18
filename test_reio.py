@@ -28,7 +28,7 @@ start_time = time.perf_counter()
 
 for tick in range(1, TOTAL_CYCLES + 1):
     if tick == 777:
-        trame_hex = "7F" # Injection de l'entropie critique au cycle de crise
+        trame_hex = "7F" 
         print(f"\n[⚠️ INJECTION CRITIQUE CYBER-PHYSIQUE] Chaos injecté au cycle #{tick}...")
     else:
         trame_hex = "00"
@@ -38,7 +38,6 @@ for tick in range(1, TOTAL_CYCLES + 1):
         ser.write(bytes.fromhex(trame_hex))
         ser.flush()
         
-        # Les couches 2, 3, 4 et 5 (Rust/VHDL) traitent le flux en direct sur la puce
         time.sleep(0.001)
         if ser.in_waiting > 0:
             ser.read(ser.in_waiting)
@@ -50,5 +49,4 @@ for tick in range(1, TOTAL_CYCLES + 1):
 duration = (time.perf_counter() - start_time) * 1000
 print(f"\nTemps de résolution physique du silicium: {duration:.4f} milliseconds")
 
-# 🔒 FERMETURE PROPRE DU PORT SANS ERREUR
 ser.close()
