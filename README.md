@@ -35,3 +35,6 @@ Cette technologie est une solution matérielle autonome développée pour une in
 
 * **Livrables publics :** Le script automatisé de stress-test Python (`REIO_Hardware_Tester_V5.py`) est fourni en accès libre pour vérification et étalonnage.
 * **Demande d'accès :** Les présentations techniques, documents de cible de sécurité (Target Security), fichiers de mappage des broches et bitstreams de simulation peuvent être partagés après signature d'un accord de non-divulgation standard (NDA unilatéral sous droit belge).
+
+![Vivado Timing Proof](bitstream_proof.png)
+![Console Stress Test Proof](stress_test_proof.png)
