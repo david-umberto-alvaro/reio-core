@@ -19,7 +19,7 @@ This technology is a standalone hardware solution developed for integration into
 ### 📅 Scientific Antecedents & Formal Specifications / Antécédents Scientifiques
 The mathematical foundations, paraconsistent l3-trivalent logic matrices, and theoretical frameworks governing this architecture were officially archived on June 18, 2026. 
 
-* **Official DOI Record (Zenodo/CERN):** [https://zenodo.org]([https://zenodo.org](https://zenodo.org/records/20743411))
+* **Official DOI Record (Zenodo/CERN):** [https://zenodo.org](https://zenodo.org/records/20743411)
 * **Citation & IP Protection:** All structural and mathematical foundations are protected under standard non-commercial international licenses (CC BY-NC-ND 4.0).
 
 ---
