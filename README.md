@@ -11,10 +11,16 @@ By implementing a paraconsistent tri-state logic matrix directly mapped into the
 * **Remediation Speed:** Nanosecond-range combinatorial interception.
 
 ### 🛡️ Intellectual Property & Commercial Framework
-This technology is a standalone hardware solution developed for integration into critical FPGA layouts or ASIC designs. To preserve trade secrets, the core logic files (`reio_core_v5.vhd`) remain strictly private.
+This technology is a standalone hardware solution developed for integration into critical FPGA layouts or ASIC designs. To preserve trade secrets, the core logic files (`test_reio.py`) remain strictly private.
 
-* **Public Deliverables:** The automated Python stress-test script (`REIO_Hardware_Tester_V5.py`) is provided openly for benchmarking and verification.
+* **Public Deliverables:** The automated Python stress-test script (`test_reio.py`) is provided openly for benchmarking and verification.
 * **Access Request:** Technical presentations, Target Security documents, pin mapping files, and simulation bitstreams can be shared under a standard Non-Disclosure Agreement (NDA under Belgian Law).
+
+### 📅 Scientific Antecedents & Formal Specifications / Antécédents Scientifiques
+The mathematical foundations, paraconsistent l3-trivalent logic matrices, and theoretical frameworks governing this architecture were officially archived on June 18, 2026. 
+
+* **Official DOI Record (Zenodo/CERN):** [https://zenodo.org]([https://zenodo.org](https://zenodo.org/records/20743411))
+* **Citation & IP Protection:** All structural and mathematical foundations are protected under standard non-commercial international licenses (CC BY-NC-ND 4.0).
 
 ---
 
@@ -31,10 +37,16 @@ En implémentant une matrice logique tri-state paraconsistante directement carto
 * **Vitesse de remédiation :** Interception combinatoire de l'ordre de la nanoseconde.
 
 ### 🛡️ Propriété Intellectuelle & Cadre Commercial
-Cette technologie est une solution matérielle autonome développée pour une intégration directe dans des topologies FPGA critiques ou des conceptions ASIC. Afin de préserver le secret d'affaires, les fichiers de logique interne (`reio_core_v5.vhd`) restent strictement privés.
+Cette technologie est une solution matérielle autonome développée pour une intégration directe dans des topologies FPGA critiques ou des conceptions ASIC. Afin de préserver le secret d'affaires, les fichiers de logique interne (`test_reio.py`) restent strictement privés.
 
-* **Livrables publics :** Le script automatisé de stress-test Python (`REIO_Hardware_Tester_V5.py`) est fourni en accès libre pour vérification et étalonnage.
+* **Livrables publics :** Le script automatisé de stress-test Python (`test_reio.py`) est fourni en accès libre pour vérification et étalonnage.
 * **Demande d'accès :** Les présentations techniques, documents de cible de sécurité (Target Security), fichiers de mappage des broches et bitstreams de simulation peuvent être partagés après signature d'un accord de non-divulgation standard (NDA unilatéral sous droit belge).
+
+### 📅 Antécédents scientifiques et spécifications formelles
+Les fondements mathématiques, les matrices de logique trivalente paraconsistante (l3) et les cadres théoriques régissant cette architecture ont été officiellement archivés le 18 juin 2026.
+
+* **Enregistrement DOI officiel (Zenodo/CERN) :** [https://zenodo.org](https://zenodo.org/records/20743411)
+* **Citation et protection de la propriété intellectuelle :** L'ensemble des fondements structurels et mathématiques est protégé par des licences internationales standard à usage non commercial (CC BY-NC-ND 4.0).
 
 ![Vivado Timing Proof](bitstream_proof.png)
 
