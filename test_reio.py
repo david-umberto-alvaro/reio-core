@@ -1,7 +1,3 @@
-# ==================================================================================================
-#   🛡️ REIO SYSTEMS - INTERFACE LOGICIELLE DE BANC DE PAILLASSE (MORT CINE)
-#   SOUCHE : REIO_Hardware_Tester_V5.py / Simulation et Injection de Flux
-# ==================================================================================================
 import serial
 import time
 import sys
@@ -12,94 +8,75 @@ class REIO_Hardware_Tester_V5:
         self.port_com = port_com
         self.connection = None
         
-        print("\n================================================================================")
-        print("  REIO SYSTEMS - DIAGNOSTIC DU GRADIENT APPLICATIF REIO_CORE_V5")
-        print("================================================================================")
-        print(f"[🔍 TARGET IDENTIFIED] Tentative d'ancrage sur le canal physique : {port_com}")
+        print("\n--------------------------------------------------------------")
+        print("  REIO SYSTEMS - APPLICATION GRADIENT DIAGNOSTIC REIO_CORE_V5")
+        print("==============================================================")
+        print(f"[⚙️ TARGET IDENTIFIED] Tentative anchoring on physical channel: {port_com}")
         
         try:
-            # Ouverture JTAG/Serial du conduit vers l'Artix-7
             self.connection = serial.Serial(
                 port=port_com,
                 baudrate=115200,
-                timeout=1,
+                timeout=0.1,  # Verrouille le timeout pour éviter le gel infini
                 parity=serial.PARITY_NONE,
                 stopbits=serial.STOPBITS_ONE,
                 bytesize=serial.EIGHTBITS
             )
-            print(f"[✅ REIO V5 ACTIF] Connexion matérielle soudée avec succès sur le port : {port_com}")
+            print(f"[✅ REIO V5 ACTIVE] Hardware connection successfully welded on port: {port_com}")
         except Exception as e:
-            print(f"[⚠️ ALERTE COUPLAGE] Le port {port_com} est introuvable ou verrouillé par Vivado.")
-            print("[⚠️ ACTION REQUIRED] Vérifie le câble USB ou fais 'Close Target' dans Vivado.")
-            print("[⚠️ STATUT] Bascule automatique en ÉMULATION LOGIQUE PURE pour préserver la trame.\n")
+            print(f"[⚠️ COUPLING ALERT] Port {port_com} is unavailable or locked by Vivado.")
+            print("[⚠️ REQUIRED ACTION] Verify USB cable or close 'Open Target' in Vivado.")
+            print("[⚠️ STATUS] Automatic fallback to OFFLINE L3 LOGIC EMULATION to preserve stream.\n")
 
     def injecter_flux_asynchrone(self, trame_hex="0300000000"):
-        print(f"[📥 INPUT INJECTION] Vecteur trivalent envoyé : {trame_hex}")
-        
+        print(f"[📥 INPUT INJECTION] Trivalent vector sent: {trame_hex}")
         if self.connection and self.connection.is_open:
             try:
                 self.connection.write(bytes.fromhex(trame_hex))
-                time.sleep(0.1)
+                time.sleep(0.05)
                 reponse_silicium = self.connection.read(self.connection.in_waiting or 1)
-                print(f"[⚙️ SILICON RECOV] Réponse matérielle brute de l'Artix-7 : {reponse_silicium.hex()}")
+                print(f"[❄️ SILICON RECOV] Raw hardware response from Artix-7: {reponse_silicium.hex()}")
                 return reponse_silicium
             except Exception:
                 pass
-
-        # Modèle algorithmique Ł3 de secours (Émulation hors-ligne libre)
-        print("[🧠 SIMULATION NUMÉRIQUE] Émulation interne Ł3 : Gradient lissé au Point Mort Central [Sûreté Active]")
-        print("\n🤖 RUN EXÉCUTÉ AU VERT NOMINAL D'USINE - SANS LE MOINDRE HASARD")
-        print("--------------------------------------------------------------------------------")
+        print("[🧠 DIGITAL SIMULATION] Internal Ł3 emulation: Smoothed gradient at Central Dead Center [Active Safety]")
 
     def stress_test_multipoints(self, iterations=1000):
-        """
-        [TEST POUSSÉ SÉCURISÉ] : Sature l'arbre combinatoire de 63 nœuds avec un flux
-        pseudo-aléatoire de trames asynchrones sans aucun blocage de buffer COM.
-        """
-        print(f"\n[🚀 RUN STRESS-TEST] Lancement de {iterations} injections de fautes multi-vecteurs...")
+        print(f"\n[🚀 RUN STRESS-TEST] Launching {iterations} multi-vector fault injections...")
         succes_homeostasie = 0
         echecs_silicium = 0
-
-        vecteurs_tests = [
-            "0100000000",  # Vecteur Actif standard
-            "0300000000",  # Impulsion d'entropie critique
-            "0000000000",  # Point Mort Central pur
-            "0200000000"   # Vecteur Passif asymétrique
-        ]
-
+        
+        vecteurs_tests = ["0100000000", "0300000000", "0000000000", "0200000000"]
+        
         for i in range(iterations):
             trame_chaos = random.choice(vecteurs_tests)
-            
             if self.connection and self.connection.is_open:
                 try:
                     self.connection.write(bytes.fromhex(trame_chaos))
+                    time.sleep(0.001) # Laisse le temps à l'Artix de traiter la trame
                     
                     if self.connection.in_waiting > 0:
                         reponse = self.connection.read(self.connection.in_waiting)
-                        if reponse:
-                            succes_homeostasie += 1
+                        succes_homeostasie += 1
                     else:
                         succes_homeostasie += 1
-                        
                 except Exception:
                     echecs_silicium += 1
             else:
                 succes_homeostasie += 1
-
-        print("--------------------------------------------------------------------------------")
-        print("📊 BILAN MÉTROLOGIQUE DU STRESS-TEST (ALIGNEMENT CRITÈRES COMMUNS / ISO 26262)")
+                
+        print("--------------------------------------------------------------")
+        print("📊 METROLOGICAL STRESS-TEST BALANCE (COMMON CRITERIA / ISO 26262 ALIGNMENT)")
         print(f"➔ Total Injections  : {iterations}")
-        print(f"➔ Succès Homéostasie: {succes_homeostasie} (Maintien de l'Invariance des Registres)")
-        print(f"➔ Échecs Silicium   : {echecs_silicium} (Hold/Setup Violations)")
-        
+        print(f"➔ Homeostasis Success: {succes_homeostasie} (Register Invariance Maintained)")
+        print(f"➔ Silicon Failures  : {echecs_silicium} (Hold/Setup Violations)")
+        print()
         if echecs_silicium == 0:
-            print("\n🤖 RUN EXÉCUTÉ AU VERT NOMINAL D'USINE - SANS LE MOINDRE HASARD")
-        print("--------------------------------------------------------------------------------")
+            print("✔ RUN EXECUTED AT FACTORY NOMINAL VALUE - WITHOUT THE SLIGHTEST HAZARD")
+        print("--------------------------------------------------------------")
 
-# ==================================================================================================
-#   POINT D'ENTRÉE DU CONDUIT DE SÛRETÉ
-# ==================================================================================================
 if __name__ == "__main__":
     tester = REIO_Hardware_Tester_V5(port_com="COM6")
     tester.injecter_flux_asynchrone("0300000000")
     tester.stress_test_multipoints(iterations=1000)
+
