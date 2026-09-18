@@ -48,6 +48,6 @@ Les fondements mathématiques, les matrices de logique trivalente paraconsistant
 * **Enregistrement DOI officiel (Zenodo/CERN) :** [https://zenodo.org](https://zenodo.org/records/20743411)
 * **Citation et protection de la propriété intellectuelle :** L'ensemble des fondements structurels et mathématiques est protégé par des licences internationales standard à usage non commercial (CC BY-NC-ND 4.0).
 
-![Vivado Timing Proof](bitstream_proof.png)
-
 ![Console Stress Test Proof](stress_test_proof.png)
+
+![Vivado Timing Proof](bitstream_proof.png)
