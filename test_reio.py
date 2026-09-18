@@ -79,4 +79,3 @@ if __name__ == "__main__":
     tester = REIO_Hardware_Tester_V5(port_com="COM6")
     tester.injecter_flux_asynchrone("0300000000")
     tester.stress_test_multipoints(iterations=1000)
-
