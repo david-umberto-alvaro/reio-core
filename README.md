@@ -9,6 +9,12 @@ The framework evaluates data integrity and boundary invariants over multi-vector
 * **Invariant Guard Clauses:** Managed interception of null payloads, type mismatches, and out-of-bounds sensor readings.
 * **Forensic Logging:** Complete production-ready execution logs detailing system state transitions.
 
+### 🎛️ High-Integrity Hardware Architecture (VHDL & RTL Design)
+This section features a hardware-level implementation of the trivalent logic engine targeted for the Xilinx Artix-7 FPGA platform using Vivado. 
+
+- **Asynchronous Combinatorial Logic:** Designed to evaluate structural status anomalies at the hardware layer.
+- **Tri-State Matrix Management:** Implementation of a hardware-level Central Dead Point (0.5) to isolate runtime timing violations and prevent data corruption cascades before the physical synthesis boundaries.
+
 *Note: This repository serves as a code demonstration for professional Software QA and Test Automation methodologies.*
 
 # Banc d'essai de robustesse pour pipelines de données (Automatisation en Python)
@@ -24,7 +30,16 @@ Le framework évalue l'intégrité des données et les invariants aux limites en
 
 *Remarque : Ce dépôt constitue une démonstration de code illustrant les méthodologies professionnelles d'assurance qualité logicielle et d'automatisation des tests.*
 
+### 🎛️ Architecture matérielle à haute intégrité (Conception VHDL et RTL)
+Cette section présente une implémentation matérielle du moteur de logique trivalente, conçue pour la plateforme FPGA Xilinx Artix-7 via l'outil Vivado.
+
+- **Logique combinatoire asynchrone :** Conçue pour évaluer les anomalies d'état structurel au niveau matériel.
+- **Gestion matricielle à trois états :** Implémentation matérielle d'un point mort central (valeur 0,5) visant à isoler les violations de timing à l'exécution et à prévenir les cascades de corruption de données en amont des étapes de synthèse physique.
+- 
 ## 📊 Execution Proofs & Metrics
+
+### Hardware RTL Synthesis & Timing Closure (Xilinx Vivado / Artix-7)
+![Vivado Design Timing Summary](timing_success.png)
 
 ### Industrial QA Metrics Report (ISO/IEC 25010 Compliant)
 ![System Stress Metrics](reio_v6.png)
