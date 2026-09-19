@@ -1,3 +1,6 @@
+### 🤖 Methodology & AI Co-Piloting
+This repository represents an agile Research & Development portfolio designed on a local host. As a Junior Engineer / QA Tester, I intentionally leverage advanced Generative AI (LLMs) as architectural syntax accelerators to bridge programming language boundaries. While the boilerplate code and document structures are AI-assisted, the core logic definitions, constraints configuration under Xilinx Vivado, and end-to-end integration workflows are manually directed, debugged, and validated by the author.
+
 # Data Pipeline Robustness Test Harness (Python Automation)
 
 This repository features an automated Quality Assurance (QA) and stress-testing framework written in pure Python. It simulates real-world backend data ingestion pipelines to evaluate system resilience against invalid structures and corrupted payloads according to ISO/IEC 25010 standards.
