@@ -13,7 +13,7 @@ The core logical architecture has been successfully synthesized and implemented 
 
 While the pure combinational logic tree is fully closed and validated by the compiler, the physical test bench encounters hardware-to-software sampling synchronization boundaries due to the purely asynchronous nature of the internal L3 matrix. The current black-box serial testing script demonstrates a readout timeout, indicating an instrumentation gap in capturing sub-nanosecond transient signals via standard serial conduits.
 
-**We are actively looking for Senior Design Verification Engineers (DV), FPGA Architects, or academic researchers to:**
+**I am actively looking for Senior Design Verification Engineers (DV), FPGA Architects, or academic researchers to:**
 1. Co-develop a high-speed hardware-in-the-loop (HIL) instrumentation bridge.
 2. Implement SystemVerilog/UVM simulation models to audit the paraconsistent stasis thresholds.
 3. Optimize the asynchronous sampling registers to establish external metrological proofs.
@@ -37,7 +37,7 @@ L'architecture logique pure a été synthétisée et implémentée avec succès 
 
 Alors que l'arbre logique combinatoire pur est validé par le compilateur, le banc d'essai physique rencontre des limites de synchronisation d'échantillonnage matériel/logiciel dues à la nature purement asynchrone de la matrice interne L3. Le script de test série actuel se heurte à un timeout de lecture, indiquant un besoin d'instrumentation avancée pour capturer les signaux transitoires de l'ordre de la sous-nanoseconde via des canaux de communication standards.
 
-**We recherchons activement des Ingénieurs de Vérification Senior (DV), des Architectes FPGA ou des chercheurs académiques pour :**
+**Je recherche activement des Ingénieurs de Vérification Senior (DV), des Architectes FPGA ou des chercheurs académiques pour :**
 1. Co-développer un pont d'instrumentation matériel en boucle (HIL) à haute vitesse.
 2. Implémenter des modèles de simulation SystemVerilog/UVM pour auditer les seuils de stase paraconsistante.
 3. Optimiser les registres d'échantillonnage asynchrones pour réaliser des mesures physiques externes stables.
