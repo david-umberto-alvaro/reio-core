@@ -47,8 +47,8 @@ Cette section présente une implémentation matérielle du moteur de logique tri
 ### Secure Data Sanitizer & Firewall Framework (OWASP Compliance)
 ![Sanitizer Cyber Threats Mitigation](sanitizer_success.png)
 
-### High-Integrity Software Derivation Engine (Safe Rust Verification)
-![Rust Cargo Test Unitaries](cargo_test_success.png)
-
 ### Data Pipeline Robustness Test Harness (Python & Pytest)
 ![Pytest Pipeline Verification](pipeline_pytest.png)
+
+### High-Integrity Software Derivation Engine (Safe Rust Verification)
+![Rust Cargo Test Unitaries](cargo_test_success.png)
