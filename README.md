@@ -20,6 +20,9 @@ This section features a hardware-level implementation of the trivalent logic eng
 
 *Note: This repository serves as a code demonstration for professional Software QA and Test Automation methodologies.*
 
+### 🤖 Méthodologie et co-pilotage par IA
+Ce dépôt constitue un portefeuille de recherche et développement agile, conçu en environnement local. En tant qu'ingénieur junior / testeur QA, j'utilise délibérément des IA génératives avancées (LLM) pour accélérer la rédaction de la syntaxe architecturale et franchir les barrières entre langages de programmation. Si le code de base (boilerplate) et les structures documentaires bénéficient d'une assistance par IA, la définition de la logique fondamentale, la configuration des contraintes sous Xilinx Vivado ainsi que les flux d'intégration de bout en bout sont pilotés, débogués et validés manuellement par l'auteur.
+
 # Banc d'essai de robustesse pour pipelines de données (Automatisation en Python)
 
 Ce dépôt présente un framework d'automatisation de l'assurance qualité (QA) et de tests de contrainte, entièrement développé en Python. Il simule des pipelines d'ingestion de données backend en conditions réelles afin d'évaluer la résilience du système face à des structures invalides et des charges utiles corrompues, conformément aux normes ISO/IEC 25010.
