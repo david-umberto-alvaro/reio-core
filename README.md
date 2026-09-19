@@ -26,9 +26,6 @@ Le framework évalue l'intégrité des données et les invariants aux limites en
 
 ## 📊 Execution Proofs & Metrics
 
-### Data Pipeline Robustness Test Harness (Python & Pytest)
-![Pytest Pipeline Verification](pipeline_pytest.png)
-
 ### Industrial QA Metrics Report (ISO/IEC 25010 Compliant)
 ![System Stress Metrics](reio_v6.png)
 
@@ -37,3 +34,6 @@ Le framework évalue l'intégrité des données et les invariants aux limites en
 
 ### High-Integrity Software Derivation Engine (Safe Rust Verification)
 ![Rust Cargo Test Unitaries](cargo_test_success.png)
+
+### Data Pipeline Robustness Test Harness (Python & Pytest)
+![Pytest Pipeline Verification](pipeline_pytest.png)
