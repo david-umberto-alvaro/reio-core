@@ -1,7 +1,7 @@
 # ==============================================================================
 # 🧪 REIO SYSTEMS - INDUSTRIAL DATA PIPELINE QA AUTOMATION FRAMEWORK
 # COMPLIANT WITH ISO/IEC 25010 TESTING STANDARDS - PYTEST NATIVE ARCHITECTURE
-# STAGE 2 : AUTOMATED QA METRICS GENERATION & EMBEDDED JSON AUDIT REPORT
+# STAGE 3 (PRO MAX) : DYNAMIC CLI CONFIGURATION & ADVANCED FUZZING METRICS
 # ==============================================================================
 import pytest
 import random
@@ -9,9 +9,10 @@ import logging
 import sys
 import json
 import time
+import argparse
 from typing import Dict, Any
 
-# Initialisation des compteurs de métriques globales de paillasse
+# Compteurs globaux synchrones pour l'acquisition des métriques
 METRICS = {
     "total_assertions": 0,
     "nominal_passed": 0,
@@ -42,7 +43,7 @@ class DataPayloadProcessor:
         return True
 
 # ==============================================================================
-# 🧪 SUITE DE TESTS PYTEST AUTOMATISÉE
+# 🧪 SUITE DE TESTS FORMELS PYTEST
 # ==============================================================================
 
 @pytest.fixture
@@ -55,10 +56,9 @@ def processor():
     {"packet_id": 103, "sensor_reading": 100.0, "checksum": "E5F6"}
 ])
 def test_nominal_flow_purity(processor, valid_packet):
-    """ Évalue le comportement du système face à des flux de données purs. """
+    """ Évalue la conformité face à des flux de données purs. """
     METRICS["total_assertions"] += 1
-    res = processor.process_incoming_packet(valid_packet)
-    assert res is True
+    assert processor.process_incoming_packet(valid_packet) is True
     METRICS["nominal_passed"] += 1
 
 
@@ -72,7 +72,7 @@ def test_nominal_flow_purity(processor, valid_packet):
     ({"packet_id": 205, "sensor_reading": None, "checksum": "11"}, ValueError)   
 ])
 def test_robustness_guard_clauses(processor, corrupted_packet, expected_exception):
-    """ Stress-test et confinement déterministe des anomalies. """
+    """ Interception déterministe des fautes par les clauses de garde. """
     METRICS["total_assertions"] += 1
     with pytest.raises(expected_exception):
         processor.process_incoming_packet(corrupted_packet)
@@ -80,8 +80,10 @@ def test_robustness_guard_clauses(processor, corrupted_packet, expected_exceptio
 
 
 def test_random_chaos_fuzzing(processor):
-    """ Fuzzing statistique asynchrone sur 500 itérations combinatoires. """
-    cycles = 500
+    """ Fuzzing statistique paramétrable. """
+    # Récupération dynamique du nombre de cycles (par défaut 500)
+    cycles = getattr(pytest, "cli_cycles", 500)
+    
     for i in range(cycles):
         METRICS["total_assertions"] += 1
         bad_reading = random.choice([random.uniform(-50.0, -0.1), random.uniform(100.1, 200.0), "CRASH", None])
@@ -93,18 +95,17 @@ def test_random_chaos_fuzzing(processor):
         METRICS["fuzzing_cycles_executed"] += 1
 
 # ==============================================================================
-# 📊 ACCROCHAGE DE SÉCURITÉ : EXPORTATION DU RAPPORT DE MÉTRIQUES DE QUALITÉ
+# 📊 GENERATION ET EXPORTATION DU RAPPORT DE QUALITÉ (JSON)
 # ==============================================================================
 @pytest.fixture(scope="session", autouse=True)
 def generate_quality_audit_report():
-    """ S'exécute automatiquement à la fin de la session de test pour écrire le rapport. """
     start_time = time.time()
     yield
     execution_time_ms = (time.time() - start_time) * 1000
     
     report_data = {
         "metadata": {
-            "framework": "REIO SYSTEMS QA ENGINE",
+            "framework": "REIO SYSTEMS QA ENGINE PRO MAX",
             "compliance": "ISO/IEC 25010 DATA INTEGRITY",
             "status": "100% REGULATED ACCORDING TO SPECS"
         },
@@ -117,6 +118,24 @@ def generate_quality_audit_report():
         }
     }
     
-    # Écriture physique du fichier JSON d'audit sur le disque local
     with open("qa_robustness_report.json", "w", encoding="utf-8") as f:
         json.dump(report_data, f, indent=4, ensure_ascii=False)
+
+# ==============================================================================
+# 🎛️ COUCHE INTERFACE CLI SOUVERAINE (Pour exécution directe sans bug de PATH)
+# ==============================================================================
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="REIO SYSTEMS - QA AUTOMATION ENGINE PRO MAX")
+    parser.add_argument("--cycles", type=int, default=500, help="Number of fuzzing loops to execute")
+    args = parser.parse_items = parser.parse_known_args()[0]
+    
+    # Injection de l'argument de la console dans l'environnement pytest
+    pytest.cli_cycles = args.cycles
+    
+    print("\n--------------------------------------------------------------")
+    print("  REIO SYSTEMS - LAUNCHING PRO MAX QA AUTOMATION ENGINE")
+    print("==============================================================")
+    print(f"[⚙️ CLI TRIGGER] Injecting {args.cycles} standalone fuzzing vectors...")
+    
+    # Appel de l'interpréteur pytest natif directement par le script
+    pytest.main(["-v", __file__])
