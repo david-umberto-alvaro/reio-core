@@ -23,3 +23,17 @@ Le framework évalue l'intégrité des données et les invariants aux limites en
 * **Journalisation détaillée (forensics) :** Journaux d'exécution complets et prêts pour la production, détaillant les transitions d'état du système.
 
 *Remarque : Ce dépôt constitue une démonstration de code illustrant les méthodologies professionnelles d'assurance qualité logicielle et d'automatisation des tests.*
+
+## 📊 Execution Proofs & Metrics
+
+### Data Pipeline Robustness Test Harness (Python & Pytest)
+![Pytest Pipeline Verification](pipeline_pytest.png)
+
+### Industrial QA Metrics Report (ISO/IEC 25010 Compliant)
+![System Stress Metrics](reio_v6.png)
+
+### Secure Data Sanitizer & Firewall Framework (OWASP Compliance)
+![Sanitizer Cyber Threats Mitigation](sanitizer_success.png)
+
+### High-Integrity Software Derivation Engine (Safe Rust Verification)
+![Rust Cargo Test Unitaries](cargo_test_success.png)
